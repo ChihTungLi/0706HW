@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        img{
+            height: 300px;
+            margin: 0 auto;
+        }
+        .btn{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 0px;
+            background: rgb(255, 249, 166);
+            font-family: 'Roboto Slab', serif;
+            color: rgb(114, 62, 32);
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <img src="images/teacher.png" alt="">
+    <button id="btn" class="btn">2~100的質數</br>有幾個</button>
+</div>
+
+    <script>
+
+        for (let i = 2; i <= 100; i++) {
+
+            for (j = 2; j < i; j++) {
+
+                if (i % j == 0) {
+                    break;
+                }
+            };
+
+            if (i == j) {
+                document.getElementById("btn").addEventListener('click', function () {
+                var div = document.createElement("div");
+                var txt = document.createTextNode(i);
+                div.appendChild(txt);
+                document.body.appendChild(div);
+                div.style.fontSize="25px";
+                div.style.color="rgb(114, 62, 32)";
+                div.style.fontWeight="700"
+            });
+            
+            };
+
+       
+
+
+        };
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/fontawesome-free-5.13.1-web/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            background-image: url(images/unnamed.jpg);
+        }
+
+        .box {
+            margin: 0 auto;
+            padding: 100px
+        }
+
+        .box ul li {
+            list-style: none;
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+            color: rgb(66, 89, 131);
+        }
+
+        .fa-crown {
+            color: rgb(250, 205, 57);
+        }
+
+        .box img {
+            width: 200px;
+        }
+
+        .box1 {
+            width: 1280px;
+            margin: 0 auto;
+            background-image: url(images/unnamed.jpg);
+            position: relative;
+            padding-bottom: 50px;
+        }
+
+        .btn {
+            margin: 0 auto;
+            width: 100px;
+            height: 50px;
+            border: 0px;
+            background-color: rgb(66, 89, 131);
+            padding: 5px;
+            position: absolute;
+            left: 30%;
+            font-family: 'Roboto Slab', serif;
+
+        }
+
+        .answer {
+            margin: 0 auto;
+            width: 300px;
+            height: 50px;
+            border: 3px solid rgb(66, 89, 131);
+            font-family: 'Roboto Slab', serif;
+            font-size: 30px;
+            text-align: center;
+            color: darkblue;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="studentA">
+            <img src="images/student.png" alt="">
+            <ul>
+                <li>Alex</li>
+                <li>18 Years old</li>
+                <li>English Score = 87</li>
+                <li>Math Score = 90</li>
+            </ul>
+        </div>
+        <div class="box" id="studentB">
+            <img src="images/student (1).png" alt="">
+            <ul>
+                <li>Bill</li>
+                <li>19 Years old</li>
+                <li>English Score = 95</li>
+                <li><i class="fas fa-crown"></i>Math Score = 98</li>
+            </ul>
+        </div>
+        <div class="box" id="studentC">
+            <img src="images/student.png" alt="">
+            <ul>
+                <li>Cook</li>
+                <li>17 Years old</li>
+                <li><i class="fas fa-crown"></i>English Score = 100</li>
+                <li>Math Score = 73</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box1">
+        <button id="engBtn" onclick="show()" type="button" class="btn btn-primary">English Score Average</button>
+        <div id="engAnswer" class="answer"></div>
+    </div>
+
+    <div class="box1">
+        <button id="mathBtn" type="button" class="btn btn-primary">Math Score Average</button>
+        <div id="mathAnswer" class="answer"></div>
+    </div>
+
+
+    <script>
+        let studentA = {
+            name: 'Alex',
+            age: 18,
+            engScore: 87,
+            mathScore: 90,
+        };
+
+
+        let studentB = {
+            name: 'Bill',
+            age: 19,
+            engScore: 95,
+            mathScore: 98,
+        };
+
+        let studentC = {
+            name: 'Cook',
+            age: 17,
+            engScore: 100,
+            mathScore: 73,
+        };
+        // -------------------------------------------------
+
+        let arrStudent = [
+            studentA, studentB, studentC
+        ];
+        //console.log(studentC.engScore);
+        // let engScoreAvg = total / arrStudent.length
+        var engTotal = 0;
+        for (let i = 0; i < arrStudent.length; i++) {
+            engTotal += arrStudent[i].engScore;
+        };
+
+        let engScoreAvg = engTotal / arrStudent.length
+        console.log(engScoreAvg);
+
+        var mathTotal = 0;
+        for (let i = 0; i < arrStudent.length; i++) {
+            mathTotal += arrStudent[i].mathScore;
+        };
+
+        let mathScoreAvg = mathTotal / arrStudent.length
+        console.log(mathScoreAvg)
+
+
+
+        document.getElementById("engBtn").addEventListener("click", function () { document.getElementById("engAnswer").innerText = engScoreAvg; });
+        document.getElementById("mathBtn").addEventListener("click", function () { document.getElementById("mathAnswer").innerText = mathScoreAvg; });
+
+    </script>
+</body>
+
+</html>
